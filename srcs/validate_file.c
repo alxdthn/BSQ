@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 19:09:43 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/23 19:28:59 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ int		validate_file(t_a *a)
 	while (a->file[i] != '\n')
 		i++;
 	if (i < 4 || i > 13)
-		return (ft_puterr());
-	printf("%s\n", a->file);
+		return (ft_puterr(1));
 	full = a->file[i - 1];
 	obstacle = a->file[i - 2];
 	empty = a->file[i - 3];
@@ -86,14 +85,3 @@ int		validate_file(t_a *a)
 	initial_quantities(a, i + 1, provided_str_quantity);
 	printf("%c , %c , %c\n", empty, obstacle, full);
 }
-
-
-
-
-
-
-
-
-
-
-
