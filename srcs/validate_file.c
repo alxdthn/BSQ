@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 19:28:59 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/23 19:30:37 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int		ft_atoi(char *str)
 
 void	initial_quantities(t_a *a, int i, int provided_str_quantity)
 {
-	int		str_quantity;
-	int		symb_quantity;
 	int		j;
 
 	j = 0;
@@ -49,7 +47,7 @@ void	initial_quantities(t_a *a, int i, int provided_str_quantity)
 		i++;
 		j++;
 	}
-	symb_quantity = j;
+	a->symb_quantity = j;
 	i = 0;
 	while (*a->file)
 	{
@@ -57,31 +55,29 @@ void	initial_quantities(t_a *a, int i, int provided_str_quantity)
 			i++;
 		a->file++;
 	}
-	str_quantity = i - 1;
-	if ((str_quantity != provided_str_quantity))
+	a->str_quantity = i - 1;
+	if ((a->str_quantity != provided_str_quantity))
 		printf("%s\n", "MAP ERROR");
-	printf("%d , %d\n", symb_quantity, str_quantity);
+	printf("%d , %d\n", a->symb_quantity, a->str_quantity);
 }
 
 int		validate_file(t_a *a)
 {
 	int		i;
-	char	full;
-	char	empty;
-	char	obstacle;
 	int		provided_str_quantity;
 
 	i = 0;
 	while (a->file[i] != '\n')
 		i++;
 	if (i < 4 || i > 13)
-		return (ft_puterr(1));
-	full = a->file[i - 1];
-	obstacle = a->file[i - 2];
-	empty = a->file[i - 3];
+		return (ft_puterr());
+	printf("%s\n", a->file);
+	a->full = a->file[i - 1];
+	a->obstacle = a->file[i - 2];
+	a->empty = a->file[i - 3];
 	a->file[i - 3] = '\0';
 	provided_str_quantity = ft_atoi(a->file);
-	a->file[i - 3] = empty;
+	a->file[i - 3] = a->empty;
 	initial_quantities(a, i + 1, provided_str_quantity);
-	printf("%c , %c , %c\n", empty, obstacle, full);
+	printf("%c , %c , %c\n", a->empty, a->obstacle, a->full);
 }

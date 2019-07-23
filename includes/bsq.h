@@ -25,6 +25,11 @@ typedef struct s_a
 {
 	char	*file;
 	int		**matrix;
+	int		srt_quantity;
+	int		symb_quantity;
+	char	empty;
+	char	obstacle;
+	char	full;
 }			   t_a;
 
 void	solve_bsq(int fd);
