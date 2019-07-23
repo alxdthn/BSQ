@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:07:51 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 17:07:53 by unicolle         ###   ########.fr       */
+/*   Updated: 2019/07/23 19:37:50 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,21 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-typedef struct s_a
+typedef struct	s_a
 {
-	char	*file;
-	int		**matrix;
-	int		srt_quantity;
-	int		symb_quantity;
-	char	empty;
-	char	obstacle;
-	char	full;
-}			   t_a;
+	char		*file;
+	char		*map;
+	int			**matrix;
+	int			str_quantity;
+	int			symb_quantity;
+	char		empty;
+	char		obstacle;
+	char		full;
+}				t_a;
 
-void	solve_bsq(int fd);
-char	*read_file(int fd);
-void	validate_file(t_a *a);
+void			solve_bsq(int fd);
+char			*read_file(int fd);
+int				validate_file(t_a *a);
+int				ft_puterr(int ret);
 
 #endif

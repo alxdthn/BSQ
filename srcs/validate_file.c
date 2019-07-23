@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 19:30:37 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/23 19:37:30 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	initial_quantities(t_a *a, int i, int provided_str_quantity)
 	a->str_quantity = i - 1;
 	if ((a->str_quantity != provided_str_quantity))
 		printf("%s\n", "MAP ERROR");
-	printf("%d , %d\n", a->symb_quantity, a->str_quantity);
 }
 
 int		validate_file(t_a *a)
@@ -70,14 +69,11 @@ int		validate_file(t_a *a)
 	while (a->file[i] != '\n')
 		i++;
 	if (i < 4 || i > 13)
-		return (ft_puterr());
-	printf("%s\n", a->file);
+		return (ft_puterr(1));
 	a->full = a->file[i - 1];
 	a->obstacle = a->file[i - 2];
 	a->empty = a->file[i - 3];
 	a->file[i - 3] = '\0';
 	provided_str_quantity = ft_atoi(a->file);
-	a->file[i - 3] = a->empty;
 	initial_quantities(a, i + 1, provided_str_quantity);
-	printf("%c , %c , %c\n", a->empty, a->obstacle, a->full);
 }
