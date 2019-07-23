@@ -24,6 +24,7 @@
 typedef struct s_a
 {
 	char	*file;
+	int		**matrix;
 }			   t_a;
 
 void	solve_bsq(int fd);
