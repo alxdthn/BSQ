@@ -6,7 +6,7 @@
 #    By: mihail <mihail@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 17:41:16 by unicolle          #+#    #+#              #
-#    Updated: 2019/07/23 18:46:18 by mihail           ###   ########.fr        #
+#    Updated: 2019/07/23 19:14:32 by mihail           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC_DIR = srcs/
 SRCS =	main.c \
 		solve_bsq.c \
 		read_file.c \
-		validate_file.c
+		validate_file.c \
+		ft_puterr.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 

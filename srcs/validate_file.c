@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_file.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 17:40:47 by unicolle         ###   ########.fr       */
+/*   Updated: 2019/07/23 19:09:43 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	initial_quantities(t_a *a, int i, int provided_str_quantity)
 	printf("%d , %d\n", symb_quantity, str_quantity);
 }
 
-void	validate_file(t_a *a)
+int		validate_file(t_a *a)
 {
 	int		i;
 	char	full;
@@ -75,7 +75,7 @@ void	validate_file(t_a *a)
 	while (a->file[i] != '\n')
 		i++;
 	if (i < 4 || i > 13)
-		printf("%s\n", "LEGEND ERROR");
+		return (ft_puterr());
 	printf("%s\n", a->file);
 	full = a->file[i - 1];
 	obstacle = a->file[i - 2];
