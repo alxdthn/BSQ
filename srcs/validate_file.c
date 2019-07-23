@@ -6,74 +6,68 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 19:37:30 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/23 20:47:52 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int		ft_atoi(char *str)
+int		initial_quantities(t_a *a)
 {
-	int result;
-	int sign;
-
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
-	{
-		str++;
-		sign = -1;
-	}
-	while (*str >= 48 && *str <= 57)
-	{
-		result = result * 10 + *str - '0';
-		str++;
-	}
-	result = result * sign;
-	return (result);
-}
-
-void	initial_quantities(t_a *a, int i, int provided_str_quantity)
-{
+	int		i;
 	int		j;
 
+	a->symb_quantity = 0;
+	while (a->map[a->symb_quantity] && a->map[a->symb_quantity] != '\n')
+		a->symb_quantity++;
 	j = 0;
-	while (a->file[i] != '\n')
+	while (a->map[j])
 	{
-		i++;
-		j++;
+		i = 0;
+		while (a->map[j] && a->map[j] != '\n')
+		{
+			if (a->map[j] != a->full
+			&& a->map[j] != a->empty
+			&& a->map[j] != a->obstacle)
+				return (ft_puterr(0));
+			++i;
+			++j;
+		}
+		if (i != a->symb_quantity)
+			return (ft_puterr(0));
+		if (a->map[j])
+			++j;
 	}
-	a->symb_quantity = j;
-	i = 0;
-	while (*a->file)
-	{
-		if (*a->file == '\n')
-			i++;
-		a->file++;
-	}
-	a->str_quantity = i - 1;
-	if ((a->str_quantity != provided_str_quantity))
-		printf("%s\n", "MAP ERROR");
+	if ((j - a->str_quantity) / a->symb_quantity != a->str_quantity)
+		return (ft_puterr(0));
+	return (1);
 }
 
 int		validate_file(t_a *a)
 {
 	int		i;
-	int		provided_str_quantity;
 
 	i = 0;
-	while (a->file[i] != '\n')
+	if (!a->file)
+		return (ft_puterr(0));
+	while (a->file[i] && a->file[i] != '\n')
 		i++;
 	if (i < 4 || i > 13)
-		return (ft_puterr(1));
-	a->full = a->file[i - 1];
-	a->obstacle = a->file[i - 2];
-	a->empty = a->file[i - 3];
-	a->file[i - 3] = '\0';
-	provided_str_quantity = ft_atoi(a->file);
-	initial_quantities(a, i + 1, provided_str_quantity);
+		return (ft_puterr(0));
+	if (!a->file[i + 1])
+		return (ft_puterr(0));
+	a->map = a->file + i + 1;
+	a->full = a->file[--i];
+	a->obstacle = a->file[--i];
+	a->empty = a->file[--i];
+	a->file[i--] = '\0';
+	while (i >= 0)
+	{
+		if (!ft_isdigit(a->file[i--]))
+			return (ft_puterr(1));
+	}
+	a->str_quantity = ft_atoi(a->file);
+	if (a->str_quantity < 0)
+		return (ft_puterr(0));
+	return (initial_quantities(a));
 }

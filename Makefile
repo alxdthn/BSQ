@@ -6,14 +6,14 @@
 #    By: mihail <mihail@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 17:41:16 by unicolle          #+#    #+#              #
-#    Updated: 2019/07/23 19:14:32 by mihail           ###   ########.fr        #
+#    Updated: 2019/07/23 20:24:44 by mihail           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsq
 LIB = bsq.a
 
-C_FLAGS = -Wall -Wextra -Werror
+C_FLAGS = -g -Wall -Wextra -Werror
 HEADER = -I includes
 
 OBJ_DIR = obj/
@@ -22,7 +22,9 @@ SRCS =	main.c \
 		solve_bsq.c \
 		read_file.c \
 		validate_file.c \
-		ft_puterr.c
+		ft_puterr.c \
+		ft_isdigit.c \
+		ft_atoi.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 
