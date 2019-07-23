@@ -6,9 +6,9 @@ void	file_to_matrix(t_a *a)
 
 	i = 0;
 	k = 0;
-	if (!(a->matrix = (int **)malloc(sizeof(int *) * str_quantity + 1)))
+	if (!(a->matrix = (int **)malloc(sizeof(int *) * (str_quantity + 1))))
 		exit (1);
-	while (*a->map[k])
+	while (a->map[k])
 	{
 		j = 0;
 		if (!(a->matrix[i] = (int *)malloc(sizeof(int) * symb_quantity)))
@@ -17,11 +17,12 @@ void	file_to_matrix(t_a *a)
 		{
 			if (a->map[k] == empty)
 				a->matrix[i][j] = 1;
-			if (a->map[k] == obstacle)
+			else
 				a->matrix[i][j] == 0;
-			j++;
-			k++;
+			++j;
+			++k;
 		}
-		i++;
+		++k;
+		++i;
 	}
 }
