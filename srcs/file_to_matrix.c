@@ -4,7 +4,7 @@ void	file_to_matrix(t_a *a)
 	int j;
 
 	i = 0;
-	if (!(a->matrix = (int **)malloc(sizeof(int) * str_quantity * symb_quantity)))
+	if (!(a->matrix = (int **)malloc(sizeof(int *) * str_quantity + 1)))
 		exit (1);
 	while (*a->map)
 	{
