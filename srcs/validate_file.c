@@ -26,16 +26,14 @@ int		initial_quantities(t_a *a)
 		i = 0;
 		while (a->map[j] && a->map[j] != '\n')
 		{
-			if (a->map[j] != a->full
-			&& a->map[j] != a->empty
-			&& a->map[j] != a->obstacle)
+			if (a->map[j] != a->empty && a->map[j] != a->obstacle)
 				return (ft_puterr(0));
 			++i;
 			++j;
 		}
 		if (i != a->symb_quantity)
 			return (ft_puterr(0));
-		if (a->map[j])
+		if (a->map[j] == '\n')
 			++j;
 	}
 	if ((j - a->str_quantity) / a->symb_quantity != a->str_quantity)
@@ -45,7 +43,7 @@ int		initial_quantities(t_a *a)
 
 int		validate_file(t_a *a)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (!a->file)
@@ -64,7 +62,7 @@ int		validate_file(t_a *a)
 	while (i >= 0)
 	{
 		if (!ft_isdigit(a->file[i--]))
-			return (ft_puterr(1));
+			return (ft_puterr(0));
 	}
 	a->str_quantity = ft_atoi(a->file);
 	if (a->str_quantity < 0)

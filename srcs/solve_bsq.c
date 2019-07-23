@@ -17,8 +17,9 @@ void	solve_bsq(int fd)
 	t_a a;
 
 	a.file = read_file(fd);
-//	if (validate_file(&a))
-//	{
-	file_to_matrix(&a);
-	print_matrix(&a);
+	if (validate_file(&a))
+	{
+		file_to_matrix(&a);
+		print_matrix(&a);
+	}
 }
