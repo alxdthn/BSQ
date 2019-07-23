@@ -2,20 +2,26 @@ void	file_to_matrix(t_a *a)
 {
 	int i;
 	int j;
+	int k;
 
 	i = 0;
+	k = 0;
 	if (!(a->matrix = (int **)malloc(sizeof(int *) * str_quantity + 1)))
 		exit (1);
-	while (*a->map)
+	while (*a->map[k])
 	{
 		j = 0;
-		a->matrix[i] = (int *)malloc(sizeof(int) * symb_quantity);
-		while (*a->map != '\n')
+		if (!(a->matrix[i] = (int *)malloc(sizeof(int) * symb_quantity)))
+			exit (1);
+		while (a->map[k] != '\n')
 		{
-			a->matrix[i][j] = *(a->map++);
+			if (a->map[k] == empty)
+				a->matrix[i][j] = 1;
+			if (a->map[k] == obstacle)
+				a->matrix[i][j] == 0;
 			j++;
+			k++;
 		}
 		i++;
-		a->map++;
 	}
 }
