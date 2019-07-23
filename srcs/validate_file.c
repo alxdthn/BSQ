@@ -76,4 +76,5 @@ int		validate_file(t_a *a)
 	a->file[i - 3] = '\0';
 	provided_str_quantity = ft_atoi(a->file);
 	initial_quantities(a, i + 1, provided_str_quantity);
+	return (0);
 }

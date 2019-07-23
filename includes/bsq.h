@@ -37,5 +37,7 @@ void			solve_bsq(int fd);
 char			*read_file(int fd);
 int				validate_file(t_a *a);
 int				ft_puterr(int ret);
+void			file_to_matrix(t_a *a);
+void			print_matrix(t_a *a);
 
 #endif
