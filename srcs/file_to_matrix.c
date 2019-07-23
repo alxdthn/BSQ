@@ -39,8 +39,8 @@ void	print_matrix(t_a *a)
 	{
 		j = 0;
 		while (j < a->symb_quantity)
-			printf("%d", a->matrix[i][j++]);
-		write(1, "\n", 1);
+			printf("%d ", a->matrix[i][j++]);
+		printf("%c", '\n');
 		i++;
 	}
 }

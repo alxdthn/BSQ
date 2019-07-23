@@ -33,7 +33,7 @@ int		initial_quantities(t_a *a)
 		}
 		if (i != a->symb_quantity)
 			return (ft_puterr(0));
-		if (a->map[j] == '\n')
+		if (a->map[j])
 			++j;
 	}
 	if ((j - a->str_quantity) / a->symb_quantity != a->str_quantity)

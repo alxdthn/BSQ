@@ -29,6 +29,8 @@ int		main(int ac, char **av)
 			else
 				solve_bsq(fd);
 			close(fd);
+			if (i < ac - 1)
+				write (1, "\n", 1);
 		}
 	}
 	return (0);
