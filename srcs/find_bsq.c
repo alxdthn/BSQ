@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_bsq.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 17:02:23 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 17:02:27 by unicolle         ###   ########.fr       */
+/*   Updated: 2019/07/24 17:25:58 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@ void	get_min_and_pos(t_a *a, int x, int y)
 {
 	int		min;
 
+	min = 0;
 	if (a->matrix[y][x])
 	{
-		min = a->matrix[y][x + 1];
-		if (a->matrix[y + 1][x + 1] < min)
-			min = a->matrix[y + 1][x + 1];
-		if (a->matrix[y + 1][x] < min)
-			min = a->matrix[y + 1][x];
+		if (x + 1 < a->symb_quantity)
+		{
+			min = a->matrix[y][x + 1];
+			if (y + 1 < a->str_quantity)
+				if (a->matrix[y + 1][x + 1] < min)
+					min = a->matrix[y + 1][x + 1];
+		}
+		if (y + 1 < a->str_quantity)
+			if (a->matrix[y + 1][x] < min)
+				min = a->matrix[y + 1][x];
 		a->matrix[y][x] += min;
 		if (a->matrix[y][x] >= a->bsq_side_size)
 		{
@@ -41,10 +47,10 @@ void	find_bsq(t_a *a)
 	a->bsq_pos_x = 0;
 	a->bsq_pos_y = 0;
 	a->bsq_side_size = 0;
-	y = a->symb_quantity - 2;
+	y = a->symb_quantity - 1;
 	while (y >= 0)
 	{
-		x = a->str_quantity - 2;
+		x = a->str_quantity - 1;
 		while (x >= 0)
 			get_min_and_pos(a, x--, y);
 		--y;
