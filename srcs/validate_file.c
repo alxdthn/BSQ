@@ -26,9 +26,7 @@ int		initial_quantities(t_a *a)
 		i = 0;
 		while (a->map[j] && a->map[j] != '\n')
 		{
-			if (a->map[j] != a->full
-			&& a->map[j] != a->empty
-			&& a->map[j] != a->obstacle)
+			if (a->map[j] != a->empty && a->map[j] != a->obstacle)
 				return (ft_puterr(0));
 			++i;
 			++j;
@@ -45,7 +43,7 @@ int		initial_quantities(t_a *a)
 
 int		validate_file(t_a *a)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (!a->file)

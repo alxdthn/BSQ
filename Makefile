@@ -26,7 +26,8 @@ SRCS =	main.c \
 		print_result.c \
 		ft_puterr.c \
 		ft_isdigit.c \
-		ft_atoi.c
+		ft_atoi.c \
+		file_to_matrix.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 
