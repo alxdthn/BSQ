@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:06:13 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 13:58:05 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 18:11:23 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*read_file(int fd)
 	char	*tmp;
 
 	file = NULL;
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[ret] = '\0';
 		if (!(tmp = ft_strjoin(file, buf)))

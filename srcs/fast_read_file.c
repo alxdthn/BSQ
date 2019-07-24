@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fast_read_file.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 17:04:35 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 17:04:38 by unicolle         ###   ########.fr       */
+/*   Updated: 2019/07/24 18:11:12 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char				*fast_read_file(int fd)
 
 	size = 0;
 	lst = NULL;
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		if (!(elem = ft_lstnew(buf, (size_t)ret)))
 		{
