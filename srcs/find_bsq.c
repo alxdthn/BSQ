@@ -6,29 +6,28 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 17:02:23 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 17:25:58 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 18:00:11 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
 void	get_min_and_pos(t_a *a, int x, int y)
-{
+ {
 	int		min;
 
-	min = 0;
 	if (a->matrix[y][x])
 	{
-		if (x + 1 < a->symb_quantity)
+		if (x + 1 >= a->symb_quantity || y + 1 >= a->str_quantity)
+			min = 0;
+		else
 		{
 			min = a->matrix[y][x + 1];
-			if (y + 1 < a->str_quantity)
-				if (a->matrix[y + 1][x + 1] < min)
-					min = a->matrix[y + 1][x + 1];
-		}
-		if (y + 1 < a->str_quantity)
+			if (a->matrix[y + 1][x + 1] < min)
+				min = a->matrix[y + 1][x + 1];
 			if (a->matrix[y + 1][x] < min)
 				min = a->matrix[y + 1][x];
+		}
 		a->matrix[y][x] += min;
 		if (a->matrix[y][x] >= a->bsq_side_size)
 		{
