@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:05:13 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 19:33:13 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 11:40:12 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		main(int ac, char **av)
 			else
 				solve_bsq(fd);
 			close(fd);
+			if (i + 1 < ac)
+				write(1, "\n", 1);
 		}
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 20:50:54 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/23 22:06:29 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		validate_file(t_a *a)
 	while (i >= 0)
 	{
 		if (!ft_isdigit(a->file[i--]))
-			return (ft_puterr(1));
+			return (ft_puterr(0));
 	}
 	a->str_quantity = ft_atoi(a->file);
 	if (a->str_quantity < 0)

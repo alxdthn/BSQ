@@ -6,7 +6,7 @@
 #    By: mihail <mihail@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 17:41:16 by unicolle          #+#    #+#              #
-#    Updated: 2019/07/23 20:24:44 by mihail           ###   ########.fr        #
+#    Updated: 2019/07/24 11:53:25 by mihail           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRCS =	main.c \
 		solve_bsq.c \
 		read_file.c \
 		validate_file.c \
+		file_to_matrix.c \
+		print_result.c \
 		ft_puterr.c \
 		ft_isdigit.c \
 		ft_atoi.c
@@ -31,7 +33,7 @@ OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 all: $(NAME)
 
 $(NAME): $(LIB)
-	gcc -o $(NAME) $(LIB)
+	gcc $(C_FLAGS) -o $(NAME) $(LIB)
 
 $(LIB): $(OBJ)
 	ar rc $@ $^
