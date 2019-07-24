@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 17:02:23 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 18:00:11 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 18:38:13 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	find_bsq(t_a *a)
 	a->bsq_pos_x = 0;
 	a->bsq_pos_y = 0;
 	a->bsq_side_size = 0;
-	y = a->symb_quantity - 1;
+	y = a->str_quantity - 1;
 	while (y >= 0)
 	{
-		x = a->str_quantity - 1;
+		x = a->symb_quantity - 1;
 		while (x >= 0)
 			get_min_and_pos(a, x--, y);
 		--y;
