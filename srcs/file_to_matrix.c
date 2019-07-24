@@ -10,6 +10,7 @@ void	file_to_matrix(t_a *a)
 	k = 0;
 	if (!(a->matrix = (int **)malloc(sizeof(int *) * (a->str_quantity + 1))))
 		exit (1);
+	a->matrix[a->str_quantity] = NULL;
 	while (a->map[k])
 	{
 		j = 0;

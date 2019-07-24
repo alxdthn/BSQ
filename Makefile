@@ -6,7 +6,7 @@
 #    By: mihail <mihail@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 17:41:16 by unicolle          #+#    #+#              #
-#    Updated: 2019/07/24 12:17:25 by mihail           ###   ########.fr        #
+#    Updated: 2019/07/24 14:02:46 by mihail           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,13 @@ SRCS =	main.c \
 		file_to_matrix.c \
 		find_bsq.c \
 		print_result.c \
+		clear_struct.c \
 		ft_puterr.c \
 		ft_isdigit.c \
 		ft_atoi.c \
-		file_to_matrix.c
+		ft_strlen.c \
+		ft_bzero.c \
+		ft_strjoin.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 
@@ -38,7 +41,7 @@ $(NAME): $(LIB)
 	gcc $(C_FLAGS) -o $(NAME) $(LIB)
 
 $(LIB): $(OBJ)
-	ar rc $@ $^
+	@ar rc $@ $^
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)

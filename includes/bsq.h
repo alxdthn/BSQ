@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:07:51 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 12:17:06 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 14:00:19 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,12 @@ void			file_to_matrix(t_a *a);
 void			print_matrix(t_a *a);
 void			find_bsq(t_a *a);
 void			print_result(t_a *a);
+void			clear_struct(t_a *a);
 int				ft_puterr(int ret);
 int				ft_atoi(char *str);
 int				ft_isdigit(char c);
+void			ft_bzero(void *src, size_t size);
+size_t			ft_strlen(char *str);
+char			*ft_strjoin(char *str1, char *str2);
 
 #endif
