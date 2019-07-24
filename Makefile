@@ -6,7 +6,7 @@
 #    By: mihail <mihail@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 17:41:16 by unicolle          #+#    #+#              #
-#    Updated: 2019/07/24 14:02:46 by mihail           ###   ########.fr        #
+#    Updated: 2019/07/24 15:13:24 by mihail           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRCS =	main.c \
 		ft_atoi.c \
 		ft_strlen.c \
 		ft_bzero.c \
-		ft_strjoin.c
+		ft_strjoin.c \
+		fast_read_file.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRCS)))
 
