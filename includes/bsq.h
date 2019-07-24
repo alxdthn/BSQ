@@ -6,14 +6,14 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:07:51 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 15:12:49 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 15:41:24 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
 
-# define BUFF_SIZE 1024
+# define BUFF_SIZE 131072
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
