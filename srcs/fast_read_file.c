@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 17:04:35 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 18:11:12 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 18:43:32 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char				*list_to_str(t_list **lst, size_t size)
 	t_list	*tmp;
 
 	res = NULL;
-	if (!(res = (char *)malloc(sizeof(char) * (size + 1))))
+	if (!size || !(res = (char *)malloc(sizeof(char) * (size + 1))))
 	{
 		ft_lstdel(lst);
 		return (NULL);
