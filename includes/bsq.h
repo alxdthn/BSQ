@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:07:51 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 12:12:40 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 12:17:06 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int				validate_file(t_a *a);
 void			find_bsq(t_a *a);
 void			file_to_matrix(t_a *a);
 void			print_matrix(t_a *a);
+void			find_bsq(t_a *a);
+void			print_result(t_a *a);
 int				ft_puterr(int ret);
 int				ft_atoi(char *str);
 int				ft_isdigit(char c);

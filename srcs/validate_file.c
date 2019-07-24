@@ -6,7 +6,7 @@
 /*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/23 22:06:29 by mihail           ###   ########.fr       */
+/*   Updated: 2019/07/24 12:13:52 by mihail           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		initial_quantities(t_a *a)
 	}
 	if ((j - a->str_quantity) / a->symb_quantity != a->str_quantity)
 		return (ft_puterr(0));
+	a->map_symb_count = j;
 	return (1);
 }
 

@@ -3,3 +3,5 @@ bsq
 obj
 *.a
 valid_checker
+*big*
+test.c
