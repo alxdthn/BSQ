@@ -53,8 +53,6 @@ int				ft_isdigit(char c);
 void			ft_bzero(void *src, size_t size);
 size_t			ft_strlen(char *str);
 char			*ft_strjoin(char *str1, char *str2);
-
-
-char	*fast_read_file(int fd);
+char			*fast_read_file(int fd);
 
 #endif
