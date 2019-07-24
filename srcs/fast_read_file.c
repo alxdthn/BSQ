@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fast_read_file.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/24 17:04:35 by unicolle          #+#    #+#             */
+/*   Updated: 2019/07/24 17:04:38 by unicolle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "bsq.h"
 
 typedef struct		s_list
@@ -7,7 +19,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-t_list	*ft_lstnew(void *data, size_t size)
+t_list				*ft_lstnew(void *data, size_t size)
 {
 	t_list	*res;
 	size_t	i;
@@ -27,13 +39,13 @@ t_list	*ft_lstnew(void *data, size_t size)
 	return (res);
 }
 
-void	ft_lstadd(t_list **alst, t_list *lst)
+void				ft_lstadd(t_list **alst, t_list *lst)
 {
 	lst->next = *alst;
 	*alst = lst;
 }
 
-void	ft_lstdel(t_list **lst)
+void				ft_lstdel(t_list **lst)
 {
 	t_list	*tmp;
 
@@ -48,7 +60,7 @@ void	ft_lstdel(t_list **lst)
 	}
 }
 
-void	ft_memcpy(void *dst, const void *src, size_t size)
+void				ft_memcpy(void *dst, const void *src, size_t size)
 {
 	size_t	i;
 
@@ -57,7 +69,7 @@ void	ft_memcpy(void *dst, const void *src, size_t size)
 		((char *)dst)[i++] = *(char *)src++;
 }
 
-char	*list_to_str(t_list **lst, size_t size)
+char				*list_to_str(t_list **lst, size_t size)
 {
 	char	*res;
 	t_list	*tmp;
@@ -81,7 +93,7 @@ char	*list_to_str(t_list **lst, size_t size)
 	return (res);
 }
 
-char	*fast_read_file(int fd)
+char				*fast_read_file(int fd)
 {
 	int		ret;
 	char	buf[BUFF_SIZE];

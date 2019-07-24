@@ -14,8 +14,8 @@
 
 int		initial_quantities(t_a *a)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	a->symb_quantity = 0;
 	while (a->map[a->symb_quantity] && a->map[a->symb_quantity] != '\n')
