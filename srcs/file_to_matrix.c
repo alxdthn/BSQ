@@ -30,30 +30,11 @@ void	file_to_matrix(t_a *a)
 			exit(1);
 		while (a->map[k] != '\n')
 		{
-			if (a->map[k] == a->empty)
-				a->matrix[i][j] = 1;
-			else
-				a->matrix[i][j] = 0;
+			a->matrix[i][j] = (a->map[k] == a->empty) ? 1 : 0;
 			++j;
 			++k;
 		}
 		++k;
 		++i;
-	}
-}
-
-void	print_matrix(t_a *a)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (a->matrix[i])
-	{
-		j = 0;
-		while (j < a->symb_quantity)
-			printf("%d ", a->matrix[i][j++]);
-		printf("%c", '\n');
-		i++;
 	}
 }

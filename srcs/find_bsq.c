@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   find_bsq.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
+/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/24 17:02:23 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 18:38:13 by mihail           ###   ########.fr       */
+/*   Created: 2019/07/24 21:35:53 by unicolle          #+#    #+#             */
+/*   Updated: 2019/07/24 21:35:56 by unicolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
 void	get_min_and_pos(t_a *a, int x, int y)
- {
+{
 	int		min;
 
 	if (a->matrix[y][x])

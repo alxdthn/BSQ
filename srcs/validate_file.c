@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_file.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
+/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/23 17:40:45 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 12:13:52 by mihail           ###   ########.fr       */
+/*   Created: 2019/07/24 21:35:27 by unicolle          #+#    #+#             */
+/*   Updated: 2019/07/24 21:35:30 by unicolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		initial_quantities(t_a *a)
 	int	i;
 	int	j;
 
-	a->symb_quantity = 0;
 	while (a->map[a->symb_quantity] && a->map[a->symb_quantity] != '\n')
 		a->symb_quantity++;
 	j = 0;

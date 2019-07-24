@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mihail <mihail@student.42.fr>              +#+  +:+       +#+        */
+/*   By: unicolle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/23 17:05:13 by unicolle          #+#    #+#             */
-/*   Updated: 2019/07/24 13:21:46 by mihail           ###   ########.fr       */
+/*   Created: 2019/07/24 21:34:25 by unicolle          #+#    #+#             */
+/*   Updated: 2019/07/24 21:34:30 by unicolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int ac, char **av)
 			else
 				solve_bsq(fd);
 			close(fd);
-			if (i + 1 < ac)
+			if (i < ac - 1)
 				write(1, "\n", 1);
 		}
 	}
